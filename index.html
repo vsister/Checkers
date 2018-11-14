@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkers</title>
+    <script src="./game.js"></script>
+    </head>
+<body bgcolor="849FB8">
+<div>
+    <h1>
+            CHECKERS
+    </h1>
+</div>
+<div id = 'but'>
+    <button id="play" onclick="but1()">
+        Play!
+    </button>
+
+    <button id="log_in" onclick="but2()">
+        Log in
+    </button>
+     <button id="rules" onclick="but3()">
+        Rules
+    </button>
+</div>
+<div class="desk">
+    <div class="table">
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="0" onclick="cellClicker(0)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"></div>
+        <div class="cell_2" id="1" onclick="cellClicker(1)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="2" onclick="cellClicker(2)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="3" onclick="cellClicker(3)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_2" id="4" onclick="cellClicker(4)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="5" onclick="cellClicker(5)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="6" onclick="cellClicker(6)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="7" onclick="cellClicker(7)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="8" onclick="cellClicker(8)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="9" onclick="cellClicker(9)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="10" onclick="cellClicker(10)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="11" onclick="cellClicker(11)">
+            <svg> <circle r="25" cx="25" cy="25" /> </svg>
+        </div>
+        <div class="cell_2" id="12" onclick="cellClicker(12)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="13" onclick="cellClicker(13)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="14" onclick="cellClicker(14)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="15" onclick="cellClicker(15)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="16" onclick="cellClicker(16)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="17" onclick="cellClicker(17)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="18" onclick="cellClicker(18)"></div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="19" onclick="cellClicker(19)"></div>
+        <div class="cell_2" id="20" onclick="cellClicker(20)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="21" onclick="cellClicker(21)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="22" onclick="cellClicker(22)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="23" onclick="cellClicker(23)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="24" onclick="cellClicker(24)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="25" onclick="cellClicker(25)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="26" onclick="cellClicker(26)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="27" onclick="cellClicker(27)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_2" id="28" onclick="cellClicker(28)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="29" onclick="cellClicker(29)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="30" onclick="cellClicker(30)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+        <div class="cell_2" id="31" onclick="cellClicker(31)">
+            <svg> <circle r="25" cx="25" cy="25"  fill="white"/> </svg>
+        </div>
+        <div class="cell_1"> </div>
+
+    </div>
+</div>
+<style>
+
+    .desk {
+        margin: 50px auto;
+        width: 450px;
+    }
+    .cell_1 {
+        background-color: #C39546;
+        border: 1px solid black;
+        float: left;
+        height: 50px;
+        width: 50px;
+    }
+    .cell_2 {
+        background-color: #622600;
+        border: 1px solid black;
+        float: left;
+        height: 50px;
+        width: 50px;
+    }
+    #play{
+        background-color: #015B90;
+        color: #ffff;
+    }
+    #log_in{
+        background-color: #015B90;
+        color: #ffff;
+    }
+    #rules{
+        background-color: #015B90;
+        color: #ffff;
+    }
+
+</style>
+</body>
+</html>
