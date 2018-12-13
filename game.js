@@ -1137,10 +1137,7 @@ function fighting(k){
 
     let OK = false;
     let k2;
-if(cells[last_k].queen){
 
-}
-  else {
     if (cells[last_k].A1H8 && cells[k].A1H8) {
         for (let i = 0; i < 8; ++i) if (A1H8[i] === last_k) {
             n = i;
@@ -1345,7 +1342,6 @@ if(cells[last_k].queen){
         }
     }
     else alert('You have to click on the blank cell next to the checker you want to beat. May be you have to beat again.')
-}
 
      }
 
@@ -1716,3 +1712,7 @@ for(let i = 20; i<32; ++i){
 }
 
 }
+
+function but1(){document.location = './index.html';}
+function but2(){}
+function but3(){document.location = './rules.html';}
