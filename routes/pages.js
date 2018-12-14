@@ -51,7 +51,7 @@ router.get('/game',auth,(req,res)=>{
 })
 
 router.get('/rules',auth, (req,res)=>{
-    res.sendFile('../'+ __dirname + '/rules.html')
+    res.sendFile('D://Checkers//rules.html')
 })
 
 router.get('/*', (req,res)=>{

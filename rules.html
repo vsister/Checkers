@@ -12,15 +12,13 @@
     </h1>
 </div>
 <div id = 'but'>
-   <button id="play" onclick="but1()">
-        Play!
-    </button>
-   <button id="log_in" onclick="but2()">
-        Log in
-    </button>
-    <button id="rules" onclick="but3()">
-        Rules
-    </button>
+    <form method='get' action='/game'>
+        <input type="submit" class='but' value="Play!">
+    </form>
+    <form method='get' action='/rules'>
+        <input type="submit" class='but' value="Rules">
+    </form>
+
 </div>
 <div id = 'rule'>
    <div id = 'R'><h1>Rules:</h1><br><br></div>
@@ -56,18 +54,11 @@
         font-size: 15pt;
         font-weight: 400;
     }
-    #play{
+   .but{
         background-color: #015B90;
         color: #ffff;
     }
-    #log_in{
-        background-color: #015B90;
-        color: #ffff;
-    }
-    #rules{
-        background-color: #015B90;
-        color: #ffff;
-    }
+
 </style>
 
 </html>

@@ -698,7 +698,7 @@ function cellClicker(k) {
       if(not_scan) scanning();
     //первый клик
      if (first_click) {
-
+if (cells[k].color === 4) {alert (cells[k].attack); alert(cells[k].forward)}
 
          if (((cells[k].color === 4)||(cells[k].color === 2))&&(turn<0) || ((cells[k].color === 1)||(cells[k].color === 3))&&(turn>0) ) {
 
@@ -710,6 +710,10 @@ function cellClicker(k) {
                          document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"black\" /> </svg>";
                      if (cells[k].color === 2)
                          document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"white\" /> </svg>";
+                     if (cells[k].color === 3)
+                         document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"red\" /> </svg>";
+                     if (cells[k].color === 4)
+                         document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"blue\" /> </svg>";
 
                  }
 
@@ -725,6 +729,11 @@ function cellClicker(k) {
                          document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"black\" /> </svg>";
                      if (cells[k].color === 2)
                          document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"white\" /> </svg>";
+                     if (cells[k].color === 3)
+                         document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"red\" /> </svg>";
+                     if (cells[k].color === 4)
+                         document.getElementById(String(k)).innerHTML = "<svg> <rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=#622600 stroke=\"yellowgreen\" stroke-width=\"5\" fill-opacity=\"1\" />  <circle r=\"25\" cx=\"25\" cy=\"25\" fill=\"blue\" /> </svg>";
+
 
                  }
                  else alert('This cheker can not move!');
@@ -770,9 +779,9 @@ function scanning(){
                     fight = 1;
                 }
                 if (cells[A1H8[i]].color ===4){s = i+1; while((s<6)&&(cells[A1H8[s]].color===0)){s+=1;}
-                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[s-1]].attack=true;}}
+                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[i]].attack=true;}}
                 if (cells[A1H8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
-                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[s+1]].attack=true;}}
+                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i]].attack=true;}}
 
                 if(cells[A1H8[i]].color === 0 && (cells[A1H8[i+1]].color === 2||cells[A1H8[i+1]].color === 4)) cells[A1H8[i+1]].forward = true;
                 if(cells[A1H8[i+1]].color === 0 && cells[A1H8[i]].color === 4) cells[A1H8[i]].forward = true;
@@ -797,14 +806,14 @@ function scanning(){
                     fight = 1;
                 }
                 if (cells[A1H8[i]].color ===4){s = i+1; while((s<4)&&(cells[A1H8[s]].color===0)){s+=1;}
-                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[s-1]].attack=true;}}
+                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[i]].attack=true;}}
                 if (cells[A3F8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
-                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[s+1]].attack=true;}}
+                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i]].attack=true;}}
 
                 if (cells[C1H6[i]].color ===4){s = i+1; while((s<4)&&(cells[C1H6[s]].color===0)){s+=1;}
-                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[s-1]].attack=true;}}
+                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[i]].attack=true;}}
                 if (cells[C1H6[i+2]].color ===4){s = i-1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
-                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[s+1]].attack=true;}}
+                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i]].attack=true;}}
                 if(cells[A3F8[i]].color === 0 && (cells[A3F8[i+1]].color === 2||cells[A3F8[i+1]].color === 4)) cells[A3F8[i+1]].forward = true;
                 if(cells[C1H6[i]].color === 0 && (cells[C1H6[i+1]].color === 2||cells[C1H6[i+1]].color === 4)) cells[C1H6[i+1]].forward = true;
                 if(cells[A3F8[i+1]].color === 0 && cells[A3F8[i]].color === 4) cells[A3F8[i]].forward = true;
@@ -831,14 +840,14 @@ function scanning(){
                     fight = 1;
                 }
                 if (cells[A5D8[i]].color ===4){s = i+1; while((s<2)&&(cells[A5D8[s]].color===0)){s+=1;}
-                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[s-1]].attack=true;}}
+                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[i]].attack=true;}}
                 if (cells[A5D8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
-                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[s+1]].attack=true;}}
+                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i]].attack=true;}}
 
                  if (cells[E1H4[i]].color ===4){s = i+1; while((s<2)&&(cells[E1H4[s]].color===0)){s+=1;}
-                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[s-1]].attack=true;}}
+                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[i]].attack=true;}}
                   if (cells[E1H4[i+2]].color ===4){s = i-1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
-                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[s+1]].attack=true;}}
+                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i]].attack=true;}}
                 if(cells[A5D8[i]].color === 0 && (cells[A5D8[i+1]].color === 2||cells[A5D8[i+1]].color === 4)) cells[A5D8[i+1]].forward = true;
                 if(cells[E1H4[i]].color === 0 && (cells[E1H4[i+1]].color === 2||cells[E1H4[i+1]].color === 4)) cells[E1H4[i+1]].forward = true;
                 if(cells[A5D8[i+1]].color === 0 && cells[A5D8[i]].color === 4) cells[A5D8[i]].forward = true;
@@ -865,14 +874,14 @@ function scanning(){
                  fight = 1;
              }
                 if (cells[H2B8[i]].color ===4){s = i+1; while((s<5)&&(cells[H2B8[s]].color===0)){s+=1;}
-                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[s-1]].attack=true;}}
+                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[i]].attack=true;}}
                 if (cells[H2B8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
-                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[s+1]].attack=true;}}
+                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i]].attack=true;}}
 
                 if (cells[G1A7[i]].color ===4){s = i+1; while((s<5)&&(cells[G1A7[s]].color===0)){s+=1;}
-                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[s-1]].attack=true;}}
+                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[i]].attack=true;}}
                 if (cells[G1A7[i+2]].color ===4){s = i-1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
-                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[s+1]].attack=true;}}
+                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i]].attack=true;}}
                 if(cells[H2B8[i]].color === 0 && (cells[H2B8[i+1]].color === 2||cells[H2B8[i+1]].color === 4)) cells[H2B8[i+1]].forward = true;
                 if(cells[G1A7[i]].color === 0 && (cells[G1A7[i+1]].color === 2||cells[G1A7[i+1]].color === 4)) cells[G1A7[i+1]].forward = true;
                 if(cells[H2B8[i+1]].color === 0 && cells[H2B8[i]].color === 2) cells[H2B8[i]].forward = true;
@@ -900,14 +909,14 @@ function scanning(){
                 }
 
                 if (cells[H4D8[i]].color ===4){s = i+1; while((s<3)&&(cells[H4D8[s]].color===0)){s+=1;}
-                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[s-1]].attack=true;}}
+                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[i]].attack=true;}}
                 if (cells[H4D8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
-                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[s+1]].attack=true;}}
+                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i]].attack=true;}}
 
                     if (cells[E1A5[i]].color ===4){s = i+1; while((s<3)&&(cells[E1A5[s]].color===0)){s+=1;}
-                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[s-1]].attack=true;}}
+                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[i]].attack=true;}}
                     if (cells[E1A5[i+2]].color ===4){s = i-1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
-                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[s+1]].attack=true;}}
+                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i]].attack=true;}}
                 if(cells[H4D8[i]].color === 0 && (cells[H4D8[i+1]].color === 2||cells[H4D8[i+1]].color === 4)) cells[H4D8[i+1]].forward = true;
                 if(cells[E1A5[i]].color === 0 && (cells[E1A5[i+1]].color === 2||cells[E1A5[i+1]].color === 4)) cells[E1A5[i+1]].forward = true;
                 if(cells[H4D8[i+1]].color === 0 && cells[H4D8[i]].color === 4) cells[H4D8[i]].forward = true;
@@ -958,9 +967,9 @@ function scanning(){
                      fight = 1;
                  }
                  if (cells[A1H8[i]].color ===3){s = i+1; while((s<6)&&(cells[A1H8[s]].color===0)){s+=1;}
-                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[s-1]].attack=true;}}
+                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[i]].attack=true;}}
                  if (cells[A1H8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
-                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[s+1]].attack=true;}}
+                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i]].attack=true;}}
                  if((cells[A1H8[i]].color === 1||cells[A1H8[i]].color === 3) && cells[A1H8[i+1]].color === 0) cells[A1H8[i]].forward = true;
                  if(cells[A1H8[i+1]].color === 3 && cells[A1H8[i]].color === 0) cells[A1H8[i+11]].forward = true;
              }
@@ -984,14 +993,14 @@ function scanning(){
                      fight = 1;
                  }
                  if (cells[A1H8[i]].color ===3){s = i+1; while((s<4)&&(cells[A1H8[s]].color===0)){s+=1;}
-                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[s-1]].attack=true;}}
+                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[i]].attack=true;}}
                  if (cells[A3F8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
-                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[s+1]].attack=true;}}
+                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i]].attack=true;}}
 
                  if (cells[C1H6[i]].color ===3){s = i+1; while((s<4)&&(cells[C1H6[s]].color===0)){s+=1;}
-                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[s-1]].attack=true;}}
+                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[i]].attack=true;}}
                  if (cells[C1H6[i+2]].color ===3){s = i-1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
-                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[s+1]].attack=true;}}
+                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i]].attack=true;}}
                  if((cells[A3F8[i]].color === 1||cells[A3F8[i]].color === 3) && cells[A3F8[i+1]].color === 0) cells[A3F8[i]].forward = true;
                  if((cells[C1H6[i]].color === 1||cells[C1H6[i]].color === 3) && cells[C1H6[i+1]].color === 0) cells[C1H6[i]].forward = true;
                  if(cells[A3F8[i+1]].color === 3 && cells[A3F8[i]].color === 0) cells[A3F8[i+1]].forward = true;
@@ -1018,14 +1027,14 @@ function scanning(){
                      fight = 1;
                  }
                  if (cells[A5D8[i]].color ===3){s = i+1; while((s<2)&&(cells[A5D8[s]].color===0)){s+=1;}
-                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[s-1]].attack=true;}}
+                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[i]].attack=true;}}
                  if (cells[A5D8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
-                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[s+1]].attack=true;}}
+                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i]].attack=true;}}
 
                  if (cells[E1H4[i]].color ===3){s = i+1; while((s<2)&&(cells[E1H4[s]].color===0)){s+=1;}
-                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[s-1]].attack=true;}}
+                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[i]].attack=true;}}
                  if (cells[E1H4[i+2]].color ===3){s = i-1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
-                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[s+1]].attack=true;}}
+                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i]].attack=true;}}
                  if((cells[A5D8[i]].color === 1||cells[A5D8[i]].color === 3) && cells[A5D8[i+1]].color === 0) cells[A5D8[i]].forward = true;
                  if((cells[E1H4[i]].color === 1||cells[E1H4[i]].color === 3) && cells[E1H4[i+1]].color === 0) cells[E1H4[i]].forward = true;
                  if(cells[A5D8[i+1]].color === 3 && cells[A5D8[i]].color === 0) cells[A5D8[i+1]].forward = true;
@@ -1052,14 +1061,14 @@ function scanning(){
                      fight = 1;
                  }
                  if (cells[H2B8[i]].color ===3){s = i+1; while((s<5)&&(cells[H2B8[s]].color===0)){s+=1;}
-                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[s-1]].attack=true;}}
+                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[i]].attack=true;}}
                  if (cells[H2B8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
-                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[s+1]].attack=true;}}
+                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i]].attack=true;}}
 
                  if (cells[G1A7[i]].color ===3){s = i+1; while((s<5)&&(cells[G1A7[s]].color===0)){s+=1;}
-                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[s-1]].attack=true;}}
+                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[i]].attack=true;}}
                  if (cells[G1A7[i+2]].color ===3){s = i-1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
-                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[s+1]].attack=true;}}
+                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i]].attack=true;}}
                  if((cells[H2B8[i]].color === 1||cells[H2B8[i]].color === 3) && cells[H2B8[i+1]].color === 0) cells[H2B8[i]].forward = true;
                  if((cells[G1A7[i]].color === 1||cells[G1A7[i]].color === 3) && cells[G1A7[i+1]].color === 0) cells[G1A7[i]].forward = true;
                  if(cells[H2B8[i+1]].color === 3 && cells[H2B8[i]].color === 0) cells[H2B8[i+1]].forward = true;
@@ -1086,14 +1095,14 @@ function scanning(){
                      fight = 1;
                  }
                  if (cells[H4D8[i]].color ===3){s = i+1; while((s<3)&&(cells[H4D8[s]].color===0)){s+=1;}
-                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[s-1]].attack=true;}}
+                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[i]].attack=true;}}
                  if (cells[H4D8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
-                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[s+1]].attack=true;}}
+                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i]].attack=true;}}
 
                  if (cells[E1A5[i]].color ===3){s = i+1; while((s<3)&&(cells[E1A5[s]].color===0)){s+=1;}
-                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[s-1]].attack=true;}}
+                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[i]].attack=true;}}
                  if (cells[E1A5[i+2]].color ===3){s = i-1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
-                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[s+1]].attack=true;}}
+                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i]].attack=true;}}
                  if((cells[H4D8[i]].color === 1||cells[H4D8[i]].color === 3) && cells[H4D8[i+1]].color === 0) cells[H4D8[i]].forward = true;
                  if((cells[E1A5[i]].color === 1||cells[E1A5[i]].color === 3) && cells[E1A5[i+1]].color === 0) cells[E1A5[i]].forward = true;
                  if(cells[H4D8[i+1]].color === 3 && cells[H4D8[i]].color === 0) cells[H4D8[i+1]].forward = true;
@@ -1137,11 +1146,32 @@ function fighting(k){
 
     let OK = false;
     let k2;
+    let n,n1;
 
     if (cells[last_k].A1H8 && cells[k].A1H8) {
-        for (let i = 0; i < 8; ++i) if (A1H8[i] === last_k) {
+        for (let i = 0; i < 8; ++i){
+            if (A1H8[i] === last_k)
             n = i;
-            break;
+            if (A1H8[i] === last_k)
+                n1 = i;
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[A1H8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[A1H8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (A1H8[n + 2] === k) {
             OK = true;
@@ -1153,9 +1183,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].A3F8 && cells[k].A3F8) {
-        for (let i = 0; i < 6; ++i) if (A3F8[i] === last_k) {
+        for (let i = 0; i < 6; ++i) {
+            if (A3F8[i] === last_k)
             n = i;
-            break;
+            if (A3F8[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[A3F8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[A3F8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (A3F8[n + 2] === k) {
             OK = true;
@@ -1167,9 +1218,29 @@ function fighting(k){
         }
     }
     if (cells[last_k].C1H6 && cells[k].C1H6) {
-        for (let i = 0; i < 6; ++i) if (C1H6[i] === last_k) {
+        for (let i = 0; i < 6; ++i){
+            if (C1H6[i] === last_k)
             n = i;
-            break;
+            if (C1H6[i] === k)
+                n1 = i;
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[C1H6[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[C1H6[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (C1H6[n + 2] === k) {
             OK = true;
@@ -1181,9 +1252,29 @@ function fighting(k){
         }
     }
     if (cells[last_k].A5D8 && cells[k].A5D8) {
-        for (let i = 0; i < 4; ++i) if (A5D8[i] === last_k) {
+        for (let i = 0; i < 4; ++i){
+            if (A5D8[i] === last_k)
             n = i;
-            break;
+            if (A5D8[i] === k)
+                n1 = i;
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[A5D8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[A5D8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (A5D8[n + 2] === k) {
             OK = true;
@@ -1195,9 +1286,29 @@ function fighting(k){
         }
     }
     if (cells[last_k].E1H4 && cells[k].E1H4) {
-        for (let i = 0; i < 4; ++i) if (E1H4[i] === last_k) {
+        for (let i = 0; i < 4; ++i) {
+            if (E1H4[i] === last_k)
             n = i;
-            break;
+            if (E1H4[i] === k)
+                n1 = i;
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[E1H4[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[E1H4[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (E1H4[n + 2] === k) {
             OK = true;
@@ -1209,9 +1320,29 @@ function fighting(k){
         }
     }
     if (cells[last_k].H2B8 && cells[k].H2B8) {
-        for (let i = 0; i < 7; ++i) if (H2B8[i] === last_k) {
+        for (let i = 0; i < 7; ++i){
+            if (H2B8[i] === last_k)
             n = i;
-            break;
+            if (H2B8[i] === k)
+                n1 = i;
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[H2B8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[H2B8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (H2B8[n + 2] === k) {
             OK = true;
@@ -1223,9 +1354,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].G1A7 && cells[k].G1A7) {
-        for (let i = 0; i < 7; ++i) if (G1A7[i] === last_k) {
+        for (let i = 0; i < 7; ++i) {
+            if (G1A7[i] === last_k)
             n = i;
-            break;
+            if (G1A7[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[G1A7[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[G1A7[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (G1A7[n + 2] === k) {
             OK = true;
@@ -1237,9 +1389,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].H4D8 && cells[k].H4D8) {
-        for (let i = 0; i < 5; ++i) if (H4D8[i] === last_k) {
+        for (let i = 0; i < 5; ++i){
+            if (H4D8[i] === last_k)
             n = i;
-            break;
+            if (H4D8[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[H4D8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[H4D8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (H4D8[n + 2] === k) {
             OK = true;
@@ -1251,9 +1424,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].E1A5 && cells[k].E1A5) {
-        for (let i = 0; i < 5; ++i) if (E1A5[i] === last_k) {
+        for (let i = 0; i < 5; ++i) {
+            if (E1A5[i] === last_k)
             n = i;
-            break;
+            if (E1A5[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[E1A5[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[E1A5[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (E1A5[n + 2] === k) {
             OK = true;
@@ -1265,9 +1459,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].H6F8 && cells[k].H6F8) {
-        for (let i = 0; i < 3; ++i) if (H6F8[i] === last_k) {
+        for (let i = 0; i < 3; ++i){
+            if (H6F8[i] === last_k)
             n = i;
-            break;
+            if (H6F8[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[H6F8[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[H6F8[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (H6F8[n + 2] === k) {
             OK = true;
@@ -1279,9 +1494,30 @@ function fighting(k){
         }
     }
     if (cells[last_k].C1A3 && cells[k].C1A3) {
-        for (let i = 0; i < 3; ++i) if (C1A3[i] === last_k) {
+        for (let i = 0; i < 3; ++i) {
+            if (C1A3[i] === last_k)
             n = i;
-            break;
+            if (C1A3[i] === k)
+                n1 = i;
+
+        }
+        if(cells[last_k].color>2){
+            if(n1>n) {
+                k2 = n1-1;
+                for (let i = n + 1; i < n1; ++i) {
+                    if (cells[C1A3[i]].color !== 0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
+            if(n1<n) {
+                k2 = n1+1;
+                for (let i = n-1; i > n1; --i) {
+                    if(cells[C1A3[i]].color!==0)
+                        break;
+                    if (i === n1) OK = true;
+                }
+            }
         }
         if (C1A3[n + 2] === k) {
             OK = true;
@@ -1292,16 +1528,19 @@ function fighting(k){
             k2 = C1A3[n - 1];
         }
     }
-    if (OK) {
-        document.getElementById(String(last_k)).innerHTML = "";
-        cells[last_k].color = 0;
+
+
         if (turn > 0) {
-            if (k === 31 || k === 29 || k === 28 || k === 27) {
+            if(OK&&(cells[k2].color === 2||cells[k2].color===4)) {
+            document.getElementById(String(last_k)).innerHTML = "";
+            if (k === 31 || k === 29 || k === 28 || k === 27||cells[last_k].color ===3) {
                 cells[k].color = 3;
+                cells[last_k].color = 0;
                 document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\"  fill=\"red\"/> </svg>"
             }
             else {
                 cells[k].color = 1;
+                cells[last_k].color = 0;
                 document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\" /> </svg>";
             }
             white -= 1;
@@ -1309,15 +1548,37 @@ function fighting(k){
                 alert("Black win!");
                 restart();
             }
+            cells[k2].dead = true;
+            last_k = k;
+            scanning();
+            if (fight === 0) {//МБ тут дурацкая ошибка
+                turn *= -1;
+                first_click = true;
+                not_scan = true;
+                for (let r = 0; r < 32; ++r) {
+                    if (cells[r].dead) {
+                        document.getElementById(String(r)).innerHTML = "";
+                        cells[r].dead = false;
+                    }
+                }
+            }
+
+        }
+        else alert('You have to click on the blank cell next to the checker you want to beat. May be you have to beat again.')
         }
 
-        else {
-            if (k === 3 || k === 2 || k === 1 || k === 0) {
+        else {if(OK&&(cells[k2].color === 1||cells[k2].color===3)) {
+
+            document.getElementById(String(last_k)).innerHTML = "";
+
+            if (k === 3 || k === 2 || k === 1 || k === 0||cells[last_k].color ===4) {
                 cells[k].color = 4;
+                cells[last_k].color = 0;
                 document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\"  fill=\"blue\"/> </svg>";
             }
             else {
                 cells[k].color = 2;
+                cells[last_k].color = 0;
                 document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\"  fill=\"white\"/> </svg>";
             }
             black -= 1;
@@ -1325,23 +1586,24 @@ function fighting(k){
                 alert("White win!");
                 restart();
             }
-        }
-        cells[k2].dead = true;
-        last_k = k;
-        scanning();
-        if (fight === 0) {
-            turn *= -1;
-            first_click = true;
-            not_scan = true;
-            for (let r = 0; r < 32; ++r) {
-                if (cells[r].dead) {
-                    document.getElementById(String(r)).innerHTML = "";
-                    cells[r].dead = false;
+            cells[k2].dead = true;
+            last_k = k;
+            scanning();
+            if (fight === 0) {//МБ тут дурацкая ошибка
+                turn *= -1;
+                first_click = true;
+                not_scan = true;
+                for (let r = 0; r < 32; ++r) {
+                    if (cells[r].dead) {
+                        document.getElementById(String(r)).innerHTML = "";
+                        cells[r].dead = false;
+                    }
                 }
             }
         }
-    }
-    else alert('You have to click on the blank cell next to the checker you want to beat. May be you have to beat again.')
+        else alert('You have to click on the blank cell next to the checker you want to beat. May be you have to beat again.')
+        }
+
 
      }
 
@@ -1713,6 +1975,3 @@ for(let i = 20; i<32; ++i){
 
 }
 
-function but1(){document.location = './index.html';}
-function but2(){}
-function but3(){document.location = './rules.html';}
