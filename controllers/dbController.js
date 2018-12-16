@@ -22,6 +22,9 @@ exports.isUser = function(token){
     })
 }
 
+exports.reset = function(token){
+    return UserModel.findOneAndUpdate({Token: token},{$set: {Total:0,White: 0,Black:0,Draw:0}})
+}
 exports.whiteWin = function(token){
     return UserModel.findOneAndUpdate({Token: token},{$inc: {Total: 1,White: 1}})
 }
@@ -35,5 +38,5 @@ exports.draw= function(token){
 }
 
 exports.findUserByToken= function (token) {
-    UserModel.findOne({Token: token})
+    return UserModel.findOne({Token: token})
 }

@@ -39,15 +39,16 @@ const auth = (req, res, next) => {
 // Perform session logout and redirect to homepage
 router.get('/logout', (req, res) => {
     req.logout()
-    res.redirect('/')
+    res.redirect('/game')
 })
 
-router.get('/',auth,(req,res)=>{
-    res.sendFile('../'+ __dirname + '/rules.html')
-})
+router.get('/',auth, function (req,res) {
+    res.redirect('/game')
 
+})
 router.get('/game',auth,(req,res)=>{
-    res.sendFile('D:/Checkers/index.html')
+    res.sendFile('D://Checkers//checkers.html')
+
 })
 
 router.get('/rules',auth, (req,res)=>{
@@ -55,7 +56,7 @@ router.get('/rules',auth, (req,res)=>{
 })
 
 router.get('/*', (req,res)=>{
-    res.send('Ты дурачок, такой страницы нету')
+    res.send('Страница не найдена')
 })
 
 

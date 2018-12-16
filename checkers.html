@@ -4,22 +4,52 @@
     <meta charset="UTF-8">
     <title>Checkers</title>
     <script src="/game.js"></script>
+    <script src="/info.js"></script>
     </head>
 <body bgcolor="849FB8">
+
 <div>
     <h1>
             CHECKERS
     </h1>
+
 </div>
-<div id = 'but'>
+
+<form method='get' action='/logout'>
+        <input type="submit" class='but log' value="Logout">
+    </form>
+<form method='post' action='/reset'>
+    <input type="submit" class='but reset' value="Reset">
+</form>
+
+<div id = 'info'>
+    <div id ='name'>
+       Имя
+    </div>
+    <div id = 'total'>
+        Total
+    </div>
+    <div id = 'white'>
+        White
+    </div>
+    <div id = 'black'>
+        Black
+    </div>
+    <div id = 'draw'>
+        Draws
+    </div>
+</div>
+
     <form method='get' action='/game'>
         <input type="submit" class='but' value="Play!">
     </form>
     <form method='get' action='/rules'>
-        <input type="submit" class='but' value="Rules">
+    <input type="submit" class='but' value="Rules">
+    </form>
+    <form method='post' action='/draw'>
+    <input type="submit" class='but finish' value="Finish game!!">
     </form>
 
-</div>
 <div class="desk">
     <div class="table">
         <div class="cell_1"> </div>
@@ -137,6 +167,7 @@
 
     </div>
 </div>
+
 <style>
 
     .desk {
@@ -161,6 +192,29 @@
     .but{
         background-color: #015B90;
         color: #ffff;
+        float: left;
+    }
+    .log{
+
+        float: right;
+        margin-left: 100px;
+
+    }
+    .reset{
+
+        float: right;
+        margin-left: 10px;
+
+    }
+    .finish{
+
+        margin-left: 500px;
+
+    }
+    #info{
+
+        float: right;
+
     }
 
 </style>

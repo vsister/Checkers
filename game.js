@@ -698,7 +698,6 @@ function cellClicker(k) {
       if(not_scan) scanning();
     //первый клик
      if (first_click) {
-if (cells[k].color === 4) {alert (cells[k].attack); alert(cells[k].forward)}
 
          if (((cells[k].color === 4)||(cells[k].color === 2))&&(turn<0) || ((cells[k].color === 1)||(cells[k].color === 3))&&(turn>0) ) {
 
@@ -736,7 +735,7 @@ if (cells[k].color === 4) {alert (cells[k].attack); alert(cells[k].forward)}
 
 
                  }
-                 else alert('This cheker can not move!');
+                 else alert('This checker can not move!');
              }
 
          }
@@ -1157,20 +1156,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[A1H8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A1H8[n1-1];
+                let i = n+1;
+                while(cells[A1H8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[A1H8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A1H8[n1+1];
+                let i = n-1;
+                while(cells[A1H8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (A1H8[n + 2] === k) {
@@ -1192,20 +1187,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[A3F8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A3F8[n1-1];
+                let i = n+1;
+                while(cells[A3F8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[A3F8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A3F8[n1+1];
+                let i = n-1;
+                while(cells[A3F8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (A3F8[n + 2] === k) {
@@ -1226,20 +1217,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[C1H6[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = C1H6[n1-1];
+                let i = n+1;
+                while(cells[C1H6[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[C1H6[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = C1H6[n1+1];
+                let i = n-1;
+                while(cells[C1H6[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (C1H6[n + 2] === k) {
@@ -1260,20 +1247,18 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[A5D8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A5D8[n1-1];
+                let i = n+1;
+                while(cells[A5D8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
                 k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[A5D8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = A5D8[n1+1];
+                let i = n-1;
+                while(cells[A5D8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
+
             }
         }
         if (A5D8[n + 2] === k) {
@@ -1294,21 +1279,19 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[E1H4[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = E1H4[n1-1];
+                let i = n+1;
+                while(cells[E1H4[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[E1H4[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = E1H4[n1+1];
+                let i = n-1;
+                while(cells[E1H4[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
+
             }
+
         }
         if (E1H4[n + 2] === k) {
             OK = true;
@@ -1328,20 +1311,17 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[H2B8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H2B8[n1-1];
+                let i = n+1;
+                while(cells[H2B8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
+
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[H2B8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H2B8[n1+1];
+                let i = n-1;
+                while(cells[H2B8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (H2B8[n + 2] === k) {
@@ -1363,20 +1343,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[G1A7[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = G1A7[n1-1];
+                let i = n+1;
+                while(cells[G1A7[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[G1A7[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = G1A7[n1+1];
+                let i = n-1;
+                while(cells[G1A7[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (G1A7[n + 2] === k) {
@@ -1398,20 +1374,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[H4D8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H4D8[n1-1];
+                let i = n+1;
+                while(cells[H4D8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[H4D8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H4D8[n1+1];
+                let i = n-1;
+                while(cells[H4D8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (H4D8[n + 2] === k) {
@@ -1433,20 +1405,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[E1A5[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = E1A5[n1-1];
+                let i = n+1;
+                while(cells[E1A5[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[E1A5[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = E1A5[n1+1];
+                let i = n-1;
+                while(cells[E1A5[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (E1A5[n + 2] === k) {
@@ -1468,20 +1436,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[H6F8[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H6F8[n1-1];
+                let i = n+1;
+                while(cells[H6F8[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[H6F8[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = H6F8[n1+1];
+                let i = n-1;
+                while(cells[H6F8[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (H6F8[n + 2] === k) {
@@ -1503,20 +1467,16 @@ function fighting(k){
         }
         if(cells[last_k].color>2){
             if(n1>n) {
-                k2 = n1-1;
-                for (let i = n + 1; i < n1; ++i) {
-                    if (cells[C1A3[i]].color !== 0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = C1A3[n1-1];
+                let i = n+1;
+                while(cells[C1A3[i]].color === 0&&i<n1-1) ++i;
+                if (i === n1-1) OK = true;
             }
             if(n1<n) {
-                k2 = n1+1;
-                for (let i = n-1; i > n1; --i) {
-                    if(cells[C1A3[i]].color!==0)
-                        break;
-                    if (i === n1) OK = true;
-                }
+                k2 = C1A3[n1+1];
+                let i = n-1;
+                while(cells[C1A3[i]].color === 0&&i>n1+1) --i;
+                if (i === n1+1) OK = true;
             }
         }
         if (C1A3[n + 2] === k) {
@@ -1528,10 +1488,10 @@ function fighting(k){
             k2 = C1A3[n - 1];
         }
     }
-
+alert(OK);
 
         if (turn > 0) {
-            if(OK&&(cells[k2].color === 2||cells[k2].color===4)) {
+            if(OK&&cells[k].color ===0 &&(cells[k2].color === 2||cells[k2].color===4)) {
             document.getElementById(String(last_k)).innerHTML = "";
             if (k === 31 || k === 29 || k === 28 || k === 27||cells[last_k].color ===3) {
                 cells[k].color = 3;
@@ -1546,7 +1506,7 @@ function fighting(k){
             white -= 1;
             if (white === 0) {
                 alert("Black win!");
-                restart();
+                $.post('/blackWin')
             }
             cells[k2].dead = true;
             last_k = k;
@@ -1567,7 +1527,7 @@ function fighting(k){
         else alert('You have to click on the blank cell next to the checker you want to beat. May be you have to beat again.')
         }
 
-        else {if(OK&&(cells[k2].color === 1||cells[k2].color===3)) {
+        else {if(OK&&cells[k].color ===0 &&(cells[k2].color === 1||cells[k2].color===3)) {
 
             document.getElementById(String(last_k)).innerHTML = "";
 
@@ -1584,7 +1544,7 @@ function fighting(k){
             black -= 1;
             if (black === 0) {
                 alert("White win!");
-                restart();
+                $.post('/whiteWin')
             }
             cells[k2].dead = true;
             last_k = k;
@@ -1627,19 +1587,16 @@ function forward(k){
             if (cells[last_k].color === 1 && A1H8[n + 1] === k || cells[last_k].color === 2 && A1H8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[A1H8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[A1H8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                     if(n1<n) {
-                        for (let i = n-1; i > n1; --i) {
-                            if(cells[A1H8[i]].color!==0)
-                                break;
-                            if (i === n1) OK = true;
-                        }
+                        let i = n-1;
+                        while(cells[A1H8[i]].color === 0&&i>n1) --i;
+                        if (i === n1) OK = true;
                 }
+
             }
 
         }
@@ -1651,18 +1608,14 @@ function forward(k){
             if (cells[last_k].color === 1 && A3F8[n + 1] === k || cells[last_k].color === 2 && A3F8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[A3F8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[A3F8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[A3F8[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[A3F8[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1674,18 +1627,14 @@ function forward(k){
             if (cells[last_k].color === 1 && C1H6[n + 1] === k || cells[last_k].color === 2 && C1H6[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[C1H6[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[C1H6[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[C1H6[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[C1H6[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1697,18 +1646,14 @@ function forward(k){
             if (cells[last_k].color === 1 && A5D8[n + 1] === k || cells[last_k].color === 2 && A5D8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[A5D8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[A5D8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[A5D8[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[A5D8[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1720,18 +1665,14 @@ function forward(k){
             if (cells[last_k].color === 1 && E1H4[n + 1] === k || cells[last_k].color === 2 && E1H4[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[E1H4[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[E1H4[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[E1H4[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[E1H4[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1743,18 +1684,14 @@ function forward(k){
             if (cells[last_k].color === 1 && H2B8[n + 1] === k || cells[last_k].color === 2 && H2B8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[H2B8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[H2B8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[H2B8[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[H2B8[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1766,18 +1703,14 @@ function forward(k){
             if (cells[last_k].color === 1 && G1A7[n + 1] === k || cells[last_k].color === 2 && G1A7[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[G1A7[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[G1A7[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[G1A7[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[G1A7[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1790,18 +1723,14 @@ function forward(k){
             if (cells[last_k].color === 1 && H4D8[n + 1] === k || cells[last_k].color === 2 && H4D8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[H4D8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[H4D8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[H4D8[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[H4D8[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1813,18 +1742,14 @@ function forward(k){
             if (cells[last_k].color === 1 && E1A5[n + 1] === k || cells[last_k].color === 2 && E1A5[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[E1A5[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[E1A5[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[E1A5[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[E1A5[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1836,18 +1761,15 @@ function forward(k){
             if (cells[last_k].color === 1 && H6F8[n + 1] === k || cells[last_k].color === 2 && H6F8[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[H6F8[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[H6F8[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
+
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[H6F8[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[H6F8[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }
@@ -1859,18 +1781,14 @@ function forward(k){
             if (cells[last_k].color === 1 && C1A3[n + 1] === k || cells[last_k].color === 2 && C1A3[n - 1] === k) OK = true;
             if (cells[last_k].color>2){
                 if(n1>n) {
-                    for (let i = n + 1; i < n1; ++i) {
-                        if (cells[C1A3[i]].color !== 0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n+1;
+                    while(cells[C1A3[i]].color === 0&&i<n1) ++i;
+                    if (i === n1) OK = true;
                 }
                 if(n1<n) {
-                    for (let i = n-1; i > n1; --i) {
-                        if(cells[C1A3[i]].color!==0)
-                            break;
-                        if (i === n1) OK = true;
-                    }
+                    let i = n-1;
+                    while(cells[C1A3[i]].color === 0&&i>n1) --i;
+                    if (i === n1) OK = true;
                 }
             }
         }

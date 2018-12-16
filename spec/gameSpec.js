@@ -1,8 +1,3 @@
-describe("Порт", function() {
-    it("должен быть указан", function() {
-        expect(port).not.toEqual(undefined);
-    });
-});
 
 describe("Белые шашки", function() {
     it("в начале игры должны быть 12", function() {

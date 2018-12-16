@@ -11,7 +11,9 @@
         CHECKERS
     </h1>
 </div>
-<div id = 'but'>
+    <form method='get' action='/logout'>
+    <input type="submit" class='but log' value="Logout">
+    </form>
     <form method='get' action='/game'>
         <input type="submit" class='but' value="Play!">
     </form>
@@ -19,7 +21,8 @@
         <input type="submit" class='but' value="Rules">
     </form>
 
-</div>
+
+
 <div id = 'rule'>
    <div id = 'R'><h1>Rules:</h1><br><br></div>
    <p>Checkers (also known as Draughts) is a two-player board game.
@@ -54,10 +57,17 @@
         font-size: 15pt;
         font-weight: 400;
     }
-   .but{
+    .but{
         background-color: #015B90;
         color: #ffff;
+        float: left;
     }
+    .log {
+
+        float: right;
+        margin-left: 100px;
+    }
+
 
 </style>
 
