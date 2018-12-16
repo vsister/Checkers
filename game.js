@@ -769,50 +769,51 @@ function scanning(){
              if(cells[A7B8[1]].color === 0 && cells[A7B8[0]].color === 4) cells[A7B8[0]].forward = true;
              if(cells[G1H2[1]].color === 0 && cells[G1H2[0]].color === 4) cells[G1H2[0]].forward = true;
             for (let i = 0; i<6; ++i) {
-                if (cells[A1H8[i]].color ===2 && cells[A1H8[i+1]].color ===1 && cells[A1H8[i+2]].color ===0) {
+                if (cells[A1H8[i]].color ===2 && (cells[A1H8[i+1]].color ===1||cells[A1H8[i+1]].color ===3) && cells[A1H8[i+2]].color ===0) {
                      cells[A1H8[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[A1H8[i+2]].color ===2 && cells[A1H8[i+1]].color ===1 && cells[A1H8[i]].color ===0) {
+                if (cells[A1H8[i+2]].color ===2 && (cells[A1H8[i+1]].color ===1||cells[A1H8[i+1]].color ===3) && cells[A1H8[i]].color ===0) {
                     cells[A1H8[i+2]].attack=true;
                     fight = 1;
                 }
                 if (cells[A1H8[i]].color ===4){s = i+1; while((s<6)&&(cells[A1H8[s]].color===0)){s+=1;}
                         if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[i]].attack=true;}}
-                if (cells[A1H8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
-                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i]].attack=true;}}
+                if (cells[A1H8[i+2]].color ===4){s = i+1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
+                        if ((cells[A1H8[s]].color===1||cells[A1H8[s]].color===3)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i+2]].attack=true;}}
 
                 if(cells[A1H8[i]].color === 0 && (cells[A1H8[i+1]].color === 2||cells[A1H8[i+1]].color === 4)) cells[A1H8[i+1]].forward = true;
                 if(cells[A1H8[i+1]].color === 0 && cells[A1H8[i]].color === 4) cells[A1H8[i]].forward = true;
             }
              if(cells[A1H8[6]].color === 0 && (cells[A1H8[7]].color === 2||cells[A1H8[7]].color === 4)) cells[A1H8[7]].forward = true;
+             if(cells[A1H8[7]].color === 4 && cells[A1H8[6]].color === 0) cells[A1H8[7]].forward = true;
 
             for (let i = 0; i<4; ++i){
-                if (cells[A3F8[i]].color ===2 && cells[A3F8[i+1]].color ===1 && cells[A3F8[i+2]].color ===0) {
+                if (cells[A3F8[i]].color ===2 && (cells[A3F8[i+1]].color ===1||cells[A3F8[i+1]].color ===3) && cells[A3F8[i+2]].color ===0) {
                     cells[A3F8[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[A3F8[i+2]].color ===2 && cells[A3F8[i+1]].color ===1 && cells[A3F8[i]].color ===0) {
+                if (cells[A3F8[i+2]].color ===2 && (cells[A3F8[i+1]].color ===1||cells[A3F8[i+1]].color ===3) && cells[A3F8[i]].color ===0) {
                     cells[A3F8[i+2]].attack=true;
                     fight = 1;
                 }
-                if (cells[C1H6[i]].color ===2 && cells[C1H6[i+1]].color ===1 && cells[C1H6[i+2]].color ===0) {
+                if (cells[C1H6[i]].color ===2 && (cells[C1H6[i+1]].color ===1||cells[C1H6[i+1]].color ===3) && cells[C1H6[i+2]].color ===0) {
                     cells[C1H6[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[C1H6[i+2]].color ===2 && cells[C1H6[i+1]].color ===1 && cells[C1H6[i]].color ===0) {
+                if (cells[C1H6[i+2]].color ===2 && (cells[C1H6[i+1]].color ===1||cells[C1H6[i+1]].color ===3) && cells[C1H6[i]].color ===0) {
                     cells[C1H6[i+2]].attack=true;
                     fight = 1;
                 }
                 if (cells[A1H8[i]].color ===4){s = i+1; while((s<4)&&(cells[A1H8[s]].color===0)){s+=1;}
                     if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[i]].attack=true;}}
-                if (cells[A3F8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
-                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i]].attack=true;}}
+                if (cells[A3F8[i+2]].color ===4){s = i+1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
+                    if ((cells[A3F8[s]].color===1||cells[A3F8[s]].color===3)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i+2]].attack=true;}}
 
                 if (cells[C1H6[i]].color ===4){s = i+1; while((s<4)&&(cells[C1H6[s]].color===0)){s+=1;}
                         if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[i]].attack=true;}}
-                if (cells[C1H6[i+2]].color ===4){s = i-1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
-                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i]].attack=true;}}
+                if (cells[C1H6[i+2]].color ===4){s = i+1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
+                        if ((cells[C1H6[s]].color===1||cells[C1H6[s]].color===3)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i+2]].attack=true;}}
                 if(cells[A3F8[i]].color === 0 && (cells[A3F8[i+1]].color === 2||cells[A3F8[i+1]].color === 4)) cells[A3F8[i+1]].forward = true;
                 if(cells[C1H6[i]].color === 0 && (cells[C1H6[i+1]].color === 2||cells[C1H6[i+1]].color === 4)) cells[C1H6[i+1]].forward = true;
                 if(cells[A3F8[i+1]].color === 0 && cells[A3F8[i]].color === 4) cells[A3F8[i]].forward = true;
@@ -820,33 +821,35 @@ function scanning(){
             }
              if(cells[A3F8[4]].color === 0 && (cells[A3F8[5]].color === 2||cells[A3F8[5]].color === 4)) cells[A3F8[5]].forward = true;
              if(cells[C1H6[4]].color === 0 && (cells[C1H6[5]].color === 2||cells[C1H6[5]].color === 4)) cells[C1H6[5]].forward = true;
+             if(cells[C1H6[5]].color === 4 && cells[C1H6[4]].color === 0) cells[C1H6[5]].forward = true;
+             if(cells[A3F8[5]].color === 4 && cells[A3F8[4]].color === 0) cells[A3F8[5]].forward = true;
 
             for (let i = 0; i<2; ++i){
-                if (cells[A5D8[i]].color ===2 && cells[A5D8[i+1]].color ===1 && cells[A5D8[i+2]].color ===0) {
+                if (cells[A5D8[i]].color ===2 && (cells[A5D8[i+1]].color ===1||cells[A5D8[i+1]].color ===3) && cells[A5D8[i+2]].color ===0) {
                     cells[A5D8[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[A5D8[i+2]].color ===2 && cells[A5D8[i+1]].color ===1 && cells[A5D8[i]].color ===0) {
+                if (cells[A5D8[i+2]].color ===2 && (cells[A5D8[i+1]].color ===1||cells[A5D8[i+1]].color ===3) && cells[A5D8[i]].color ===0) {
                     cells[A5D8[i+2]].attack=true;
                     fight = 1;
                 }
-                if (cells[E1H4[i]].color ===2 && cells[E1H4[i+1]].color ===1 && cells[E1H4[i+2]].color ===0) {
+                if (cells[E1H4[i]].color ===2 && (cells[E1H4[i+1]].color ===1||cells[E1H4[i+1]].color ===3) && cells[E1H4[i+2]].color ===0) {
                     cells[i].attack=true;
                     fight = 1;
                 }
-                if (cells[E1H4[i+2]].color ===2 && cells[E1H4[i+1]].color ===1 && cells[E1H4[i]].color ===0) {
+                if (cells[E1H4[i+2]].color ===2 && (cells[E1H4[i+1]].color ===1||cells[E1H4[i+1]].color ===3) && cells[E1H4[i]].color ===0) {
                     cells[E1H4[i+2]].attack=true;
                     fight = 1;
                 }
                 if (cells[A5D8[i]].color ===4){s = i+1; while((s<2)&&(cells[A5D8[s]].color===0)){s+=1;}
                     if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[i]].attack=true;}}
-                if (cells[A5D8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
-                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i]].attack=true;}}
+                if (cells[A5D8[i+2]].color ===4){s = i+1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
+                    if ((cells[A5D8[s]].color===1||cells[A5D8[s]].color===3)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i+2]].attack=true;}}
 
                  if (cells[E1H4[i]].color ===4){s = i+1; while((s<2)&&(cells[E1H4[s]].color===0)){s+=1;}
                         if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[i]].attack=true;}}
-                  if (cells[E1H4[i+2]].color ===4){s = i-1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
-                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i]].attack=true;}}
+                  if (cells[E1H4[i+2]].color ===4){s = i+1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
+                        if ((cells[E1H4[s]].color===1||cells[E1H4[s]].color===3)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i+2]].attack=true;}}
                 if(cells[A5D8[i]].color === 0 && (cells[A5D8[i+1]].color === 2||cells[A5D8[i+1]].color === 4)) cells[A5D8[i+1]].forward = true;
                 if(cells[E1H4[i]].color === 0 && (cells[E1H4[i+1]].color === 2||cells[E1H4[i+1]].color === 4)) cells[E1H4[i+1]].forward = true;
                 if(cells[A5D8[i+1]].color === 0 && cells[A5D8[i]].color === 4) cells[A5D8[i]].forward = true;
@@ -854,33 +857,36 @@ function scanning(){
             }
              if(cells[A5D8[2]].color === 0 && (cells[A5D8[3]].color === 2||cells[A5D8[3]].color === 4)) cells[A5D8[3]].forward = true;
              if(cells[E1H4[2]].color === 0 && (cells[E1H4[3]].color === 2||cells[E1H4[3]].color === 4)) cells[E1H4[3]].forward = true;
+             if(cells[E1H4[3]].color === 4 && cells[E1H4[2]].color === 0) cells[E1H4[3]].forward = true;
+             if(cells[A5D8[3]].color === 4 && cells[A5D8[2]].color === 0) cells[A5D8[3]].forward = true;
 
-            for (let i = 0; i<5; ++i) {
-                if (cells[H2B8[i]].color ===2 && cells[H2B8[i+1]].color ===1 && cells[H2B8[i+2]].color ===0) {
+
+             for (let i = 0; i<5; ++i) {
+                if (cells[H2B8[i]].color ===2 && (cells[H2B8[i+1]].color ===1||cells[H2B8[i+1]].color ===3) && cells[H2B8[i+2]].color ===0) {
                 cells[H2B8[i]].attack=true;
                 fight = 1;
                 }
-             if (cells[H2B8[i+2]].color ===2 && cells[H2B8[i+1]].color ===1 && cells[H2B8[i]].color ===0) {
+             if (cells[H2B8[i+2]].color ===2 && (cells[H2B8[i+1]].color ===1||cells[H2B8[i+1]].color ===3) && cells[H2B8[i]].color ===0) {
                  cells[H2B8[i+2]].attack=true;
                  fight = 1;
              }
-             if (cells[G1A7[i]].color ===2 && cells[G1A7[i+1]].color ===1 && cells[G1A7[i+2]].color ===0) {
+             if (cells[G1A7[i]].color ===2 && (cells[G1A7[i+1]].color ===1||cells[G1A7[i+1]].color ===3) && cells[G1A7[i+2]].color ===0) {
                  cells[G1A7[i]].attack=true;
                  fight = 1;
              }
-             if (cells[G1A7[i+2]].color ===2 && cells[G1A7[i+1]].color ===1 && cells[G1A7[i]].color ===0) {
+             if (cells[G1A7[i+2]].color ===2 && (cells[G1A7[i+1]].color ===1||cells[G1A7[i+1]].color ===3) && cells[G1A7[i]].color ===0) {
                  cells[G1A7[i+2]].attack=true;
                  fight = 1;
              }
                 if (cells[H2B8[i]].color ===4){s = i+1; while((s<5)&&(cells[H2B8[s]].color===0)){s+=1;}
                     if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[i]].attack=true;}}
-                if (cells[H2B8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
-                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i]].attack=true;}}
+                if (cells[H2B8[i+2]].color ===4){s = i+1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
+                    if ((cells[H2B8[s]].color===1||cells[H2B8[s]].color===3)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i+2]].attack=true;}}
 
                 if (cells[G1A7[i]].color ===4){s = i+1; while((s<5)&&(cells[G1A7[s]].color===0)){s+=1;}
                         if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[i]].attack=true;}}
-                if (cells[G1A7[i+2]].color ===4){s = i-1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
-                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i]].attack=true;}}
+                if (cells[G1A7[i+2]].color ===4){s = i+1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
+                        if ((cells[G1A7[s]].color===1||cells[G1A7[s]].color===3)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i+2]].attack=true;}}
                 if(cells[H2B8[i]].color === 0 && (cells[H2B8[i+1]].color === 2||cells[H2B8[i+1]].color === 4)) cells[H2B8[i+1]].forward = true;
                 if(cells[G1A7[i]].color === 0 && (cells[G1A7[i+1]].color === 2||cells[G1A7[i+1]].color === 4)) cells[G1A7[i+1]].forward = true;
                 if(cells[H2B8[i+1]].color === 0 && cells[H2B8[i]].color === 2) cells[H2B8[i]].forward = true;
@@ -888,34 +894,36 @@ function scanning(){
             }
              if(cells[H2B8[5]].color === 0 && (cells[H2B8[6]].color === 2||cells[H2B8[6]].color === 4)) cells[H2B8[6]].forward = true;
              if(cells[G1A7[5]].color === 0 && (cells[G1A7[6]].color === 2||cells[G1A7[6]].color === 4)) cells[G1A7[6]].forward = true;
+             if(cells[H2B8[6]].color === 4 && cells[H2B8[5]].color === 0) cells[H2B8[6]].forward = true;
+             if(cells[G1A7[6]].color === 4 && cells[G1A7[5]].color === 0) cells[G1A7[6]].forward = true;
 
             for (let i = 0; i<3; ++i){
-                if (cells[H4D8[i]].color ===2 && cells[H4D8[i+1]].color ===1 && cells[H4D8[i+2]].color ===0) {
+                if (cells[H4D8[i]].color ===2 && (cells[H4D8[i+1]].color ===1||cells[H4D8[i+1]].color ===3) && cells[H4D8[i+2]].color ===0) {
                     cells[H4D8[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[H4D8[i+2]].color ===2 && cells[H4D8[i+1]].color ===1 && cells[H4D8[i]].color ===0) {
+                if (cells[H4D8[i+2]].color ===2 && (cells[H4D8[i+1]].color ===1||cells[H4D8[i+1]].color ===3) && cells[H4D8[i]].color ===0) {
                     cells[H4D8[i+2]].attack=true;
                     fight = 1;
                 }
-                if (cells[E1A5[i]].color ===2 && cells[E1A5[i+1]].color ===1 && cells[E1A5[i+2]].color ===0) {
+                if (cells[E1A5[i]].color ===2 && (cells[E1A5[i+1]].color ===1||cells[E1A5[i+1]].color ===3) && cells[E1A5[i+2]].color ===0) {
                     cells[E1A5[i]].attack=true;
                     fight = 1;
                 }
-                if (cells[E1A5[i+2]].color ===2 && cells[E1A5[i+1]].color ===1 && cells[E1A5[i]].color ===0) {
+                if (cells[E1A5[i+2]].color ===2 && (cells[E1A5[i+1]].color ===1||cells[E1A5[i+1]].color ===3) && cells[E1A5[i]].color ===0) {
                     cells[E1A5[i+2]].attack=true;
                     fight = 1;
                 }
 
                 if (cells[H4D8[i]].color ===4){s = i+1; while((s<3)&&(cells[H4D8[s]].color===0)){s+=1;}
                     if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[i]].attack=true;}}
-                if (cells[H4D8[i+2]].color ===4){s = i-1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
-                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i]].attack=true;}}
+                if (cells[H4D8[i+2]].color ===4){s = i+1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
+                    if ((cells[H4D8[s]].color===1||cells[H4D8[s]].color===3)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i+2]].attack=true;}}
 
                     if (cells[E1A5[i]].color ===4){s = i+1; while((s<3)&&(cells[E1A5[s]].color===0)){s+=1;}
                         if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[i]].attack=true;}}
-                    if (cells[E1A5[i+2]].color ===4){s = i-1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
-                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i]].attack=true;}}
+                    if (cells[E1A5[i+2]].color ===4){s = i+1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
+                        if ((cells[E1A5[s]].color===1||cells[E1A5[s]].color===3)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i+2]].attack=true;}}
                 if(cells[H4D8[i]].color === 0 && (cells[H4D8[i+1]].color === 2||cells[H4D8[i+1]].color === 4)) cells[H4D8[i+1]].forward = true;
                 if(cells[E1A5[i]].color === 0 && (cells[E1A5[i+1]].color === 2||cells[E1A5[i+1]].color === 4)) cells[E1A5[i+1]].forward = true;
                 if(cells[H4D8[i+1]].color === 0 && cells[H4D8[i]].color === 4) cells[H4D8[i]].forward = true;
@@ -923,14 +931,16 @@ function scanning(){
             }
              if(cells[H4D8[3]].color === 0 && (cells[H4D8[4]].color === 2||cells[H4D8[4]].color === 4)) cells[H4D8[4]].forward = true;
              if(cells[E1A5[3]].color === 0 && (cells[E1A5[4]].color === 2||cells[E1A5[4]].color === 4)) cells[E1A5[4]].forward = true;
+             if(cells[H4D8[4]].color === 4 && cells[H4D8[3]].color === 0) cells[H4D8[4]].forward = true;
+             if(cells[E1A5[4]].color === 4 && cells[E1A5[3]].color === 0) cells[E1A5[4]].forward = true;
 
 
 
-             if ((cells[H6F8[0]].color ===2||cells[H6F8[0]].color ===4) && cells[H6F8[1]].color ===1 && cells[H6F8[2]].color ===0) {
+             if ((cells[H6F8[0]].color ===2||cells[H6F8[0]].color ===4) && (cells[H6F8[1]].color ===1||cells[H6F8[1]].color ===3) && cells[H6F8[2]].color ===0) {
                  cells[H6F8[0]].attack=true;
                  fight = 1;
              }
-             if ((cells[H6F8[2]].color ===2||cells[H6F8[2]].color ===4) && cells[H6F8[1]].color ===1 && cells[H6F8[0]].color ===0) {
+             if ((cells[H6F8[2]].color ===2||cells[H6F8[2]].color ===4) && (cells[H6F8[1]].color ===1||cells[H6F8[1]].color ===3) && cells[H6F8[0]].color ===0) {
                  cells[H6F8[2]].attack=true;
                  fight = 1;
              }
@@ -942,7 +952,7 @@ function scanning(){
                  cells[C1A3[0]].attack=true;
                  fight = 1;
              }
-             if ((cells[C1A3[2]].color ===2||cells[C1A3[2]].color ===4) && cells[C1A3[1]].color ===1 && cells[C1A3[0]].color ===0) {
+             if ((cells[C1A3[2]].color ===2||cells[C1A3[2]].color ===4) && (cells[C1A3[1]].color ===1||cells[C1A3[1]].color ===3) && cells[C1A3[0]].color ===0) {
                  cells[C1A3[2]].attack=true;
                  fight = 1;
              }
@@ -957,49 +967,50 @@ function scanning(){
              if(cells[A7B8[0]].color === 0 && cells[A7B8[1]].color === 3) cells[A7B8[1]].forward = true;
              if(cells[G1H2[0]].color === 0 && cells[G1H2[1]].color === 3) cells[G1H2[1]].forward = true;
              for (let i = 0; i<6; ++i) {
-                 if (cells[A1H8[i]].color ===1 && cells[A1H8[i+1]].color ===2 && cells[A1H8[i+2]].color ===0) {
+                 if (cells[A1H8[i]].color ===1 && (cells[A1H8[i+1]].color ===2||cells[A1H8[i+1]].color ===4) && cells[A1H8[i+2]].color ===0) {
                      cells[A1H8[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[A1H8[i+2]].color ===1 && cells[A1H8[i+1]].color ===2 && cells[A1H8[i]].color ===0) {
+                 if (cells[A1H8[i+2]].color ===1 && (cells[A1H8[i+1]].color ===2||cells[A1H8[i+1]].color ===4) && cells[A1H8[i]].color ===0) {
                      cells[A1H8[i+2]].attack=true;
                      fight = 1;
                  }
                  if (cells[A1H8[i]].color ===3){s = i+1; while((s<6)&&(cells[A1H8[s]].color===0)){s+=1;}
                      if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s+1]].color===0) {fight =1; cells[A1H8[i]].attack=true;}}
-                 if (cells[A1H8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
-                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i]].attack=true;}}
+                 if (cells[A1H8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[A1H8[s]].color===0)){s-=1;}
+                     if ((cells[A1H8[s]].color===2||cells[A1H8[s]].color===4)&&cells[A1H8[s-1]].color===0) {fight = 1; cells[A1H8[i+2]].attack=true;}}
                  if((cells[A1H8[i]].color === 1||cells[A1H8[i]].color === 3) && cells[A1H8[i+1]].color === 0) cells[A1H8[i]].forward = true;
-                 if(cells[A1H8[i+1]].color === 3 && cells[A1H8[i]].color === 0) cells[A1H8[i+11]].forward = true;
+                 if(cells[A1H8[i+1]].color === 3 && cells[A1H8[i]].color === 0) cells[A1H8[i+1]].forward = true;
              }
              if((cells[A1H8[6]].color === 1 || cells[A1H8[6]].color === 3) && cells[A1H8[7]].color === 0) cells[A1H8[6]].forward = true;
+             if(cells[A1H8[7]].color === 3 && cells[A1H8[6]].color === 0) cells[A1H8[7]].forward = true;
 
              for (let i = 0; i<4; ++i){
-                 if (cells[A3F8[i]].color ===1 && cells[A3F8[i+1]].color ===2 && cells[A3F8[i+2]].color ===0) {
+                 if (cells[A3F8[i]].color ===1 && (cells[A3F8[i+1]].color ===2||cells[A3F8[i+1]].color ===4) && cells[A3F8[i+2]].color ===0) {
                      cells[A3F8[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[A3F8[i+2]].color ===1 && cells[A3F8[i+1]].color ===2 && cells[A3F8[i]].color ===0) {
+                 if (cells[A3F8[i+2]].color ===1 && (cells[A3F8[i+1]].color ===2||cells[A3F8[i+1]].color ===4) && cells[A3F8[i]].color ===0) {
                      cells[A3F8[i+2]].attack=true;
                      fight = 1;
                  }
-                 if (cells[C1H6[i]].color ===1 && cells[C1H6[i+1]].color ===2 && cells[C1H6[i+2]].color ===0) {
+                 if (cells[C1H6[i]].color ===1 && (cells[C1H6[i+1]].color ===2||cells[C1H6[i+1]].color ===4) && cells[C1H6[i+2]].color ===0) {
                      cells[C1H6[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[C1H6[i+2]].color ===1 && cells[C1H6[i+1]].color ===2 && cells[C1H6[i]].color ===0) {
+                 if (cells[C1H6[i+2]].color ===1 && (cells[C1H6[i+1]].color ===2||cells[C1H6[i+1]].color ===4) && cells[C1H6[i]].color ===0) {
                      cells[C1H6[i+2]].attack=true;
                      fight = 1;
                  }
                  if (cells[A1H8[i]].color ===3){s = i+1; while((s<4)&&(cells[A1H8[s]].color===0)){s+=1;}
                      if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[i]].attack=true;}}
-                 if (cells[A3F8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
-                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i]].attack=true;}}
+                 if (cells[A3F8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
+                     if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i+2]].attack=true;}}
 
                  if (cells[C1H6[i]].color ===3){s = i+1; while((s<4)&&(cells[C1H6[s]].color===0)){s+=1;}
                      if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s+1]].color===0) {fight =1; cells[C1H6[i]].attack=true;}}
-                 if (cells[C1H6[i+2]].color ===3){s = i-1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
-                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i]].attack=true;}}
+                 if (cells[C1H6[i+2]].color ===3){s = i+1; while((s>1)&&(cells[C1H6[s]].color===0)){s-=1;}
+                     if ((cells[C1H6[s]].color===2||cells[C1H6[s]].color===4)&&cells[C1H6[s-1]].color===0) {fight = 1; cells[C1H6[i+2]].attack=true;}}
                  if((cells[A3F8[i]].color === 1||cells[A3F8[i]].color === 3) && cells[A3F8[i+1]].color === 0) cells[A3F8[i]].forward = true;
                  if((cells[C1H6[i]].color === 1||cells[C1H6[i]].color === 3) && cells[C1H6[i+1]].color === 0) cells[C1H6[i]].forward = true;
                  if(cells[A3F8[i+1]].color === 3 && cells[A3F8[i]].color === 0) cells[A3F8[i+1]].forward = true;
@@ -1007,33 +1018,35 @@ function scanning(){
              }
              if((cells[A3F8[4]].color === 1||cells[A3F8[4]].color === 3) && cells[A3F8[5]].color === 0) cells[A3F8[4]].forward = true;
              if((cells[C1H6[4]].color === 1||cells[C1H6[4]].color === 3)&& cells[C1H6[5]].color === 0) cells[C1H6[4]].forward = true;
+             if(cells[A3F8[5]].color === 3 && cells[A3F8[4]].color === 0) cells[A3F8[5]].forward = true;
+             if(cells[C1H6[5]].color === 3 && cells[C1H6[4]].color === 0) cells[C1H6[5]].forward = true;
 
              for (let i = 0; i<2; ++i){
-                 if (cells[A5D8[i]].color ===1 && cells[A5D8[i+1]].color ===2 && cells[A5D8[i+2]].color ===0) {
+                 if (cells[A5D8[i]].color ===1 && (cells[A5D8[i+1]].color ===2||cells[A5D8[i+1]].color ===4) && cells[A5D8[i+2]].color ===0) {
                      cells[A5D8[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[A5D8[i+2]].color ===1 && cells[A5D8[i+1]].color ===2 && cells[A5D8[i]].color ===0) {
+                 if (cells[A5D8[i+2]].color ===1 && (cells[A5D8[i+1]].color ===2||cells[A5D8[i+1]].color ===4) && cells[A5D8[i]].color ===0) {
                      cells[A5D8[i+2]].attack=true;
                      fight = 1;
                  }
-                 if (cells[E1H4[i]].color ===1 && cells[E1H4[i+1]].color ===2 && cells[E1H4[i+2]].color ===0) {
+                 if (cells[E1H4[i]].color ===1 && (cells[E1H4[i+1]].color ===2||cells[E1H4[i+1]].color ===4) && cells[E1H4[i+2]].color ===0) {
                      cells[E1H4[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[E1H4[i+2]].color ===1 && cells[E1H4[i+1]].color ===2 && cells[E1H4[i]].color ===0) {
+                 if (cells[E1H4[i+2]].color ===1 && (cells[E1H4[i+1]].color ===2||cells[E1H4[i+1]].color ===4) && cells[E1H4[i]].color ===0) {
                      cells[E1H4[i+2]].attack=true;
                      fight = 1;
                  }
                  if (cells[A5D8[i]].color ===3){s = i+1; while((s<2)&&(cells[A5D8[s]].color===0)){s+=1;}
                      if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s+1]].color===0) {fight =1; cells[A5D8[i]].attack=true;}}
-                 if (cells[A5D8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
-                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i]].attack=true;}}
+                 if (cells[A5D8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[A5D8[s]].color===0)){s-=1;}
+                     if ((cells[A5D8[s]].color===2||cells[A5D8[s]].color===4)&&cells[A5D8[s-1]].color===0) {fight = 1; cells[A5D8[i+2]].attack=true;}}
 
                  if (cells[E1H4[i]].color ===3){s = i+1; while((s<2)&&(cells[E1H4[s]].color===0)){s+=1;}
                      if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s+1]].color===0) {fight =1; cells[E1H4[i]].attack=true;}}
-                 if (cells[E1H4[i+2]].color ===3){s = i-1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
-                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i]].attack=true;}}
+                 if (cells[E1H4[i+2]].color ===3){s = i+1; while((s>1)&&(cells[E1H4[s]].color===0)){s-=1;}
+                     if ((cells[E1H4[s]].color===2||cells[E1H4[s]].color===4)&&cells[E1H4[s-1]].color===0) {fight = 1; cells[E1H4[i+2]].attack=true;}}
                  if((cells[A5D8[i]].color === 1||cells[A5D8[i]].color === 3) && cells[A5D8[i+1]].color === 0) cells[A5D8[i]].forward = true;
                  if((cells[E1H4[i]].color === 1||cells[E1H4[i]].color === 3) && cells[E1H4[i+1]].color === 0) cells[E1H4[i]].forward = true;
                  if(cells[A5D8[i+1]].color === 3 && cells[A5D8[i]].color === 0) cells[A5D8[i+1]].forward = true;
@@ -1041,33 +1054,35 @@ function scanning(){
              }
              if((cells[A5D8[2]].color === 1||cells[A5D8[2]].color === 3) && cells[A5D8[3]].color === 0) cells[A5D8[2]].forward = true;
              if((cells[E1H4[2]].color === 1||cells[E1H4[2]].color === 3) && cells[E1H4[3]].color === 0) cells[E1H4[2]].forward = true;
+             if(cells[E1H4[3]].color === 3 && cells[E1H4[2]].color === 0) cells[E1H4[3]].forward = true;
+             if(cells[A5D8[3]].color === 3 && cells[A5D8[2]].color === 0) cells[A5D8[3]].forward = true;
 
              for (let i = 0; i<5; ++i) {
-                 if (cells[H2B8[i]].color ===1 && cells[H2B8[i+1]].color ===2 && cells[H2B8[i+2]].color ===0) {
+                 if (cells[H2B8[i]].color ===1 && (cells[H2B8[i+1]].color ===2||cells[H2B8[i+1]].color ===4) && cells[H2B8[i+2]].color ===0) {
                      cells[H2B8[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[H2B8[i+2]].color ===1 && cells[H2B8[i+1]].color ===2 && cells[H2B8[i]].color ===0) {
+                 if (cells[H2B8[i+2]].color ===1 && (cells[H2B8[i+1]].color ===2||cells[H2B8[i+1]].color ===4) && cells[H2B8[i]].color ===0) {
                      cells[H2B8[i+2]].attack=true;
                      fight = 1;
                  }
-                 if (cells[G1A7[i]].color ===1 && cells[G1A7[i+1]].color ===2 && cells[G1A7[i+2]].color ===0) {
+                 if (cells[G1A7[i]].color ===1 && (cells[G1A7[i+1]].color ===2||cells[G1A7[i+1]].color ===4) && cells[G1A7[i+2]].color ===0) {
                      cells[G1A7[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[G1A7[i+2]].color ===1 && cells[G1A7[i+1]].color ===2 && cells[G1A7[i]].color ===0) {
+                 if (cells[G1A7[i+2]].color ===1 && (cells[G1A7[i+1]].color ===2||cells[G1A7[i+1]].color ===4) && cells[G1A7[i]].color ===0) {
                      cells[G1A7[i+2]].attack=true;
                      fight = 1;
                  }
                  if (cells[H2B8[i]].color ===3){s = i+1; while((s<5)&&(cells[H2B8[s]].color===0)){s+=1;}
                      if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s+1]].color===0) {fight =1; cells[H2B8[i]].attack=true;}}
-                 if (cells[H2B8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
-                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i]].attack=true;}}
+                 if (cells[H2B8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[H2B8[s]].color===0)){s-=1;}
+                     if ((cells[H2B8[s]].color===2||cells[H2B8[s]].color===4)&&cells[H2B8[s-1]].color===0) {fight = 1; cells[H2B8[i+2]].attack=true;}}
 
                  if (cells[G1A7[i]].color ===3){s = i+1; while((s<5)&&(cells[G1A7[s]].color===0)){s+=1;}
                      if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s+1]].color===0) {fight =1; cells[G1A7[i]].attack=true;}}
-                 if (cells[G1A7[i+2]].color ===3){s = i-1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
-                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i]].attack=true;}}
+                 if (cells[G1A7[i+2]].color ===3){s = i+1; while((s>1)&&(cells[G1A7[s]].color===0)){s-=1;}
+                     if ((cells[G1A7[s]].color===2||cells[G1A7[s]].color===4)&&cells[G1A7[s-1]].color===0) {fight = 1; cells[G1A7[i+2]].attack=true;}}
                  if((cells[H2B8[i]].color === 1||cells[H2B8[i]].color === 3) && cells[H2B8[i+1]].color === 0) cells[H2B8[i]].forward = true;
                  if((cells[G1A7[i]].color === 1||cells[G1A7[i]].color === 3) && cells[G1A7[i+1]].color === 0) cells[G1A7[i]].forward = true;
                  if(cells[H2B8[i+1]].color === 3 && cells[H2B8[i]].color === 0) cells[H2B8[i+1]].forward = true;
@@ -1075,33 +1090,35 @@ function scanning(){
              }
              if((cells[H2B8[5]].color === 1||cells[H2B8[5]].color === 3) && cells[H2B8[6]].color === 0) cells[H2B8[5]].forward = true;
              if((cells[G1A7[5]].color === 1||cells[G1A7[5]].color === 3) && cells[G1A7[6]].color === 0) cells[G1A7[5]].forward = true;
+             if(cells[H2B8[6]].color === 3 && cells[H2B8[5]].color === 0) cells[H2B8[6]].forward = true;
+             if(cells[G1A7[6]].color === 3 && cells[G1A7[5]].color === 0) cells[G1A7[6]].forward = true;
 
              for (let i = 0; i<3; ++i){
-                 if (cells[H4D8[i]].color ===1 && cells[H4D8[i+1]].color ===2 && cells[H4D8[i+2]].color ===0) {
+                 if (cells[H4D8[i]].color ===1 && (cells[H4D8[i+1]].color ===2||cells[H4D8[i+1]].color ===4) && cells[H4D8[i+2]].color ===0) {
                      cells[H4D8[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[H4D8[i+2]].color ===1 && cells[H4D8[i+1]].color ===2 && cells[H4D8[i]].color ===0) {
+                 if (cells[H4D8[i+2]].color ===1 && (cells[H4D8[i+1]].color ===2||cells[H4D8[i+1]].color ===4) && cells[H4D8[i]].color ===0) {
                      cells[H4D8[i+2]].attack=true;
                      fight = 1;
                  }
-                 if (cells[E1A5[i]].color ===1 && cells[E1A5[i+1]].color ===2 && cells[E1A5[i+2]].color ===0) {
+                 if (cells[E1A5[i]].color ===1 && (cells[E1A5[i+1]].color ===2||cells[E1A5[i+1]].color ===4) && cells[E1A5[i+2]].color ===0) {
                      cells[E1A5[i]].attack=true;
                      fight = 1;
                  }
-                 if (cells[E1A5[i+2]].color ===1 && cells[E1A5[i+1]].color ===2 && cells[E1A5[i]].color ===0) {
+                 if (cells[E1A5[i+2]].color ===1 && (cells[E1A5[i+1]].color ===2||cells[E1A5[i+1]].color ===4) && cells[E1A5[i]].color ===0) {
                      cells[E1A5[i+2]].attack=true;
                      fight = 1;
                  }
                  if (cells[H4D8[i]].color ===3){s = i+1; while((s<3)&&(cells[H4D8[s]].color===0)){s+=1;}
                      if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s+1]].color===0) {fight =1; cells[H4D8[i]].attack=true;}}
-                 if (cells[H4D8[i+2]].color ===3){s = i-1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
-                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i]].attack=true;}}
+                 if (cells[H4D8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[H4D8[s]].color===0)){s-=1;}
+                     if ((cells[H4D8[s]].color===2||cells[H4D8[s]].color===4)&&cells[H4D8[s-1]].color===0) {fight = 1; cells[H4D8[i+2]].attack=true;}}
 
                  if (cells[E1A5[i]].color ===3){s = i+1; while((s<3)&&(cells[E1A5[s]].color===0)){s+=1;}
                      if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s+1]].color===0) {fight =1; cells[E1A5[i]].attack=true;}}
-                 if (cells[E1A5[i+2]].color ===3){s = i-1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
-                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i]].attack=true;}}
+                 if (cells[E1A5[i+2]].color ===3){s = i+1; while((s>1)&&(cells[E1A5[s]].color===0)){s-=1;}
+                     if ((cells[E1A5[s]].color===2||cells[E1A5[s]].color===4)&&cells[E1A5[s-1]].color===0) {fight = 1; cells[E1A5[i+2]].attack=true;}}
                  if((cells[H4D8[i]].color === 1||cells[H4D8[i]].color === 3) && cells[H4D8[i+1]].color === 0) cells[H4D8[i]].forward = true;
                  if((cells[E1A5[i]].color === 1||cells[E1A5[i]].color === 3) && cells[E1A5[i+1]].color === 0) cells[E1A5[i]].forward = true;
                  if(cells[H4D8[i+1]].color === 3 && cells[H4D8[i]].color === 0) cells[H4D8[i+1]].forward = true;
@@ -1109,12 +1126,14 @@ function scanning(){
              }
              if((cells[H4D8[3]].color === 1||cells[H4D8[3]].color === 3) && cells[H4D8[4]].color === 0) cells[H4D8[3]].forward = true;
              if((cells[E1A5[3]].color === 1||cells[E1A5[3]].color === 3) && cells[E1A5[4]].color === 0) cells[E1A5[3]].forward = true;
+             if(cells[H4D8[4]].color === 3 && cells[H4D8[3]].color === 0) cells[H4D8[4]].forward = true;
+             if(cells[E1A5[4]].color === 3 && cells[E1A5[3]].color === 0) cells[E1A5[4]].forward = true;
 
-             if ((cells[H6F8[0]].color ===1||cells[H6F8[0]].color ===3) && cells[H6F8[1]].color ===2 && cells[H6F8[2]].color ===0) {
+             if ((cells[H6F8[0]].color ===1||cells[H6F8[0]].color ===3) && (cells[H6F8[1]].color ===2||cells[H6F8[1]].color ===4) && cells[H6F8[2]].color ===0) {
                  cells[H6F8[0]].attack=true;
                  fight = 1;
              }
-             if ((cells[H6F8[2]].color ===1||cells[H6F8[2]].color ===3) && cells[H6F8[1]].color ===2 && cells[H6F8[0]].color ===0) {
+             if ((cells[H6F8[2]].color ===1||cells[H6F8[2]].color ===3) && (cells[H6F8[1]].color ===2||cells[H6F8[1]].color ===4) && cells[H6F8[0]].color ===0) {
                  cells[H6F8[2]].attack=true;
                  fight = 1;
              }
@@ -1123,11 +1142,11 @@ function scanning(){
              if(cells[H6F8[1]].color === 3 && cells[H6F8[0]].color === 0) cells[H6F8[1]].forward = true;
              if(cells[H6F8[2]].color === 3 && cells[H6F8[1]].color === 0) cells[H6F8[2]].forward = true;
 
-             if ((cells[C1A3[0]].color ===1||cells[C1A3[0]].color ===3) && cells[C1A3[1]].color ===2 && cells[C1A3[2]].color ===0) {
+             if ((cells[C1A3[0]].color ===1||cells[C1A3[0]].color ===3) && (cells[C1A3[1]].color ===2||cells[C1A3[1]].color ===4) && cells[C1A3[2]].color ===0) {
                  cells[C1A3[0]].attack=true;
                  fight = 1;
              }
-             if ((cells[C1A3[2]].color ===1||cells[C1A3[2]].color ===3) && cells[C1A3[1]].color ===2 && cells[C1A3[0]].color ===0) {
+             if ((cells[C1A3[2]].color ===1||cells[C1A3[2]].color ===3) && (cells[C1A3[1]].color ===2||cells[C1A3[1]].color ===4) && cells[C1A3[0]].color ===0) {
                  cells[C1A3[2]].attack=true;
                  fight = 1;
              }
@@ -1151,7 +1170,7 @@ function fighting(k){
         for (let i = 0; i < 8; ++i){
             if (A1H8[i] === last_k)
             n = i;
-            if (A1H8[i] === last_k)
+            if (A1H8[i] === k)
                 n1 = i;
         }
         if(cells[last_k].color>2){
@@ -1488,12 +1507,12 @@ function fighting(k){
             k2 = C1A3[n - 1];
         }
     }
-alert(OK);
+
 
         if (turn > 0) {
             if(OK&&cells[k].color ===0 &&(cells[k2].color === 2||cells[k2].color===4)) {
             document.getElementById(String(last_k)).innerHTML = "";
-            if (k === 31 || k === 29 || k === 28 || k === 27||cells[last_k].color ===3) {
+            if (k === 31 || k === 30 || k === 29 || k === 28||cells[last_k].color ===3) {
                 cells[k].color = 3;
                 cells[last_k].color = 0;
                 document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\"  fill=\"red\"/> </svg>"
@@ -1506,12 +1525,12 @@ alert(OK);
             white -= 1;
             if (white === 0) {
                 alert("Black win!");
-                $.post('/blackWin')
+                $.post('/blackWin')//НЕ РАБОТАЕТ
             }
             cells[k2].dead = true;
             last_k = k;
             scanning();
-            if (fight === 0) {//МБ тут дурацкая ошибка
+            if (cells[last_k].attack === false) {//МБ тут дурацкая ошибка
                 turn *= -1;
                 first_click = true;
                 not_scan = true;
@@ -1544,12 +1563,12 @@ alert(OK);
             black -= 1;
             if (black === 0) {
                 alert("White win!");
-                $.post('/whiteWin')
+                $.post('/whiteWin')// НЕ РАБОТАЕТ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             cells[k2].dead = true;
             last_k = k;
             scanning();
-            if (fight === 0) {//МБ тут дурацкая ошибка
+            if (cells[last_k].attack === false) {//МБ тут дурацкая ошибка
                 turn *= -1;
                 first_click = true;
                 not_scan = true;
@@ -1818,7 +1837,7 @@ function forward(k){
                 turn *= -1;
                 cells[last_k].color = 0;
                 document.getElementById(String(last_k)).innerHTML = "";
-                if (k === 31 || k === 29 || k === 28 || k === 27) {
+                if (k === 31 || k === 30 || k === 29 || k === 28) {
                     cells[k].color = 3;
                     document.getElementById(String(k)).innerHTML = "<svg> <circle r=\"25\" cx=\"25\" cy=\"25\"  fill=\"red\"/> </svg>"
                 }
@@ -1857,7 +1876,6 @@ function forward(k){
     }
 
     }
-
 
 
 
