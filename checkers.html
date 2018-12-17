@@ -5,6 +5,8 @@
     <title>Checkers</title>
     <script src="/game.js"></script>
     <script src="/info.js"></script>
+    <script src="/spec/gameSpec.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     </head>
 <body bgcolor="849FB8">
 
@@ -18,7 +20,7 @@
 <form method='get' action='/logout'>
         <input type="submit" class='but log' value="Logout">
     </form>
-<form method='post' action='/reset'>
+<form name = 'reset' method='post' action='/reset'>
     <input type="submit" class='but reset' value="Reset">
 </form>
 

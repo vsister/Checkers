@@ -8,6 +8,7 @@ exports.getUser =  async function (req,res){
 exports.reset = async function(req,res) {
     await db.reset(req.user.id)
     res.redirect('/game')
+
 }
 
 exports.blackWin = async function(req,res) {

@@ -1002,7 +1002,7 @@ function scanning(){
                      cells[C1H6[i+2]].attack=true;
                      fight = 1;
                  }
-                 if (cells[A1H8[i]].color ===3){s = i+1; while((s<4)&&(cells[A1H8[s]].color===0)){s+=1;}
+                 if (cells[A3F8[i]].color ===3){s = i+1; while((s<4)&&(cells[A3F8[s]].color===0)){s+=1;}
                      if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s+1]].color===0) {fight =1; cells[A3F8[i]].attack=true;}}
                  if (cells[A3F8[i+2]].color ===3){s = i+1; while((s>1)&&(cells[A3F8[s]].color===0)){s-=1;}
                      if ((cells[A3F8[s]].color===2||cells[A3F8[s]].color===4)&&cells[A3F8[s-1]].color===0) {fight = 1; cells[A3F8[i+2]].attack=true;}}
@@ -1525,12 +1525,13 @@ function fighting(k){
             white -= 1;
             if (white === 0) {
                 alert("Black win!");
-                $.post('/blackWin')//НЕ РАБОТАЕТ
+                $.post('/blackWin');
+                window.location.reload();
             }
             cells[k2].dead = true;
             last_k = k;
             scanning();
-            if (cells[last_k].attack === false) {//МБ тут дурацкая ошибка
+            if (cells[last_k].attack === false) {
                 turn *= -1;
                 first_click = true;
                 not_scan = true;
@@ -1563,12 +1564,14 @@ function fighting(k){
             black -= 1;
             if (black === 0) {
                 alert("White win!");
-                $.post('/whiteWin')// НЕ РАБОТАЕТ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                $.post('/whiteWin');
+                window.location.reload();
+
             }
             cells[k2].dead = true;
             last_k = k;
             scanning();
-            if (cells[last_k].attack === false) {//МБ тут дурацкая ошибка
+            if (cells[last_k].attack === false) {
                 turn *= -1;
                 first_click = true;
                 not_scan = true;
