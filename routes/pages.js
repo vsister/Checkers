@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-
+const path = require('path')
+const frontendPath = path.join(__dirname,'../')
 
 
 // Perform the login, after login Auth0 will redirect to callback
@@ -47,12 +48,12 @@ router.get('/',auth, function (req,res) {
 
 })
 router.get('/game',auth,(req,res)=>{
-    res.sendFile('D://Checkers//checkers.html')
+    res.sendFile(frontendPath + '/checkers.html')
 
 })
 
 router.get('/rules',auth, (req,res)=>{
-    res.sendFile('D://Checkers//rules.html')
+    res.sendFile(frontendPath + '/rules.html')
 })
 
 router.get('/*', (req,res)=>{
